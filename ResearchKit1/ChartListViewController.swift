@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 import ResearchKit
+let results : NSString = ""
+var WageConversion = results.floatValue
 
 class ChartListViewController: UITableViewController {
     @IBOutlet weak var tableView1: UITableView!
     
-    let pieChartDataSource = PieChartDataSource()
+    var results : NSString = ""
+    
+
+        let pieChartDataSource = PieChartDataSource()
     let lineGraphChartDataSource = LineGraphDataSource()
     let discreteGraphChartDataSource = DiscreteGraphDataSource()
     let pieChartIdentifier = "PieChartCell"
@@ -26,6 +31,10 @@ class ChartListViewController: UITableViewController {
     var chartTableViewCells: [UITableViewCell]!
     
     override func viewDidLoad() {
+        let shortcut = UIApplicationShortcutItem(type: "com.tutsplus.Introducing-3D-Touch.add-item", localizedTitle: "Results", localizedSubtitle: "Dynamic Action", icon: UIApplicationShortcutIcon(type: .Add), userInfo: nil)
+        UIApplication.sharedApplication().shortcutItems = [shortcut]
+
+        print(results)
         // ORKPieChartView
         pieChartTableViewCell = tableView.dequeueReusableCellWithIdentifier(pieChartIdentifier) as! PieChartTableViewCell
         let pieChartView = pieChartTableViewCell.pieChartView
@@ -66,8 +75,10 @@ class ChartListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = chartTableViewCells[indexPath.row];
+  
         return cell
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -75,5 +86,11 @@ class ChartListViewController: UITableViewController {
         lineGraphChartTableViewCell.graphView.animateWithDuration(0.5)
         discreteGraphChartTableViewCell.graphView.animateWithDuration(0.5)
     }
+    }
+extension String {
+    var floatValue: Float {
+        return (self as NSString).floatValue
+    }
 }
+
 

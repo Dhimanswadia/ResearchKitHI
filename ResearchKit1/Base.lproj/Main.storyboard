@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SDZ-kq-K1n">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--StressStats-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ResearchKit1" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,15 +22,19 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnG-l9-17C">
                                 <rect key="frame" x="20" y="213" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Consent"/>
+                                <state key="normal" title="Consent">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="consentTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXZ-Rm-qyR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZE-fA-UYP">
                                 <rect key="frame" x="20" y="251" width="335" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Survey"/>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.83921568627450982" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Survey">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="surveyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZr-hW-mE9"/>
                                 </connections>
@@ -44,12 +49,45 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-VR-I7u">
                                 <rect key="frame" x="20" y="327" width="335" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Tap"/>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.83921568627450982" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Tap">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="TapTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crG-og-MeZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIs-l2-65g">
+                                <rect key="frame" x="20" y="403" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.83921568627450982" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Heart Rate">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="authorizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eH0-ef-Lak"/>
+                                    <action selector="walkTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7X-rr-QYc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90h-xn-1AU">
+                                <rect key="frame" x="20" y="476" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.33333333333333331" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Results">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="y02-sQ-xUu" kind="show" id="CGg-2k-f3d">
+                                        <segue key="commit" inheritsFrom="parent" id="5EY-16-H6A"/>
+                                        <segue key="preview" inheritsFrom="commit" id="9cc-hI-Gh3"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Welcome to the Researchkit App.The aim of this app is to gauge the effects of a long shift on Doctors and Paramedics." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-qn-Hfa">
+                                <rect key="frame" x="67" y="77" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sc-dN-3Cg">
                                 <rect key="frame" x="20" y="365" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,28 +96,14 @@
                                     <action selector="SpatialTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vO-0A-L4G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIs-l2-65g">
-                                <rect key="frame" x="20" y="403" width="335" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Heart Rate"/>
-                                <connections>
-                                    <action selector="authorizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eH0-ef-Lak"/>
-                                    <action selector="walkTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7X-rr-QYc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90h-xn-1AU">
-                                <rect key="frame" x="20" y="476" width="335" height="30"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Results"/>
-                                <connections>
-                                    <segue destination="y02-sQ-xUu" kind="show" id="Ps7-Fg-Pci"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PZE-fA-UYP" firstAttribute="top" secondItem="pnG-l9-17C" secondAttribute="bottom" constant="8" id="3bo-cV-L98"/>
                             <constraint firstItem="90h-xn-1AU" firstAttribute="leading" secondItem="cIs-l2-65g" secondAttribute="leading" id="B76-9U-UId"/>
+                            <constraint firstItem="uvG-qn-Hfa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="67" id="BT6-Qq-HmI"/>
+                            <constraint firstAttribute="trailing" secondItem="uvG-qn-Hfa" secondAttribute="trailing" constant="68" id="FwR-01-svB"/>
                             <constraint firstAttribute="trailing" secondItem="pnG-l9-17C" secondAttribute="trailing" constant="20" id="Fwt-5Z-2Hp"/>
                             <constraint firstItem="2sc-dN-3Cg" firstAttribute="top" secondItem="LUe-VR-I7u" secondAttribute="bottom" constant="8" symbolic="YES" id="O0S-eK-79X"/>
                             <constraint firstItem="cyW-Cn-fCg" firstAttribute="top" secondItem="PZE-fA-UYP" secondAttribute="bottom" constant="8" id="RG6-Ed-ghB"/>
@@ -97,30 +121,27 @@
                             <constraint firstItem="LUe-VR-I7u" firstAttribute="leading" secondItem="cyW-Cn-fCg" secondAttribute="leading" id="qXT-Gl-0tI"/>
                             <constraint firstItem="cyW-Cn-fCg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="289" id="suh-gW-jxa"/>
                             <constraint firstItem="LUe-VR-I7u" firstAttribute="top" secondItem="cyW-Cn-fCg" secondAttribute="bottom" constant="8" id="tcm-gW-OEM"/>
+                            <constraint firstItem="pnG-l9-17C" firstAttribute="top" secondItem="uvG-qn-Hfa" secondAttribute="bottom" constant="8" id="uuT-fY-LMo"/>
+                            <constraint firstItem="uvG-qn-Hfa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="vO9-zt-YB3"/>
                             <constraint firstItem="PZE-fA-UYP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="x5k-pe-LiH"/>
                             <constraint firstItem="cIs-l2-65g" firstAttribute="top" secondItem="2sc-dN-3Cg" secondAttribute="bottom" constant="8" symbolic="YES" id="zqL-Xt-4KT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="StressStats" id="qAN-jy-TgB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="BALnCeLabel" destination="cyW-Cn-fCg" id="vcW-a5-jiU"/>
+                        <outlet property="RESULTbUTTON" destination="90h-xn-1AU" id="dDo-gI-jiL"/>
+                        <outlet property="cONSENTLABEL" destination="pnG-l9-17C" id="wEi-gL-aoZ"/>
+                        <outlet property="hEARTRateButton" destination="cIs-l2-65g" id="VvO-ax-3CJ"/>
+                        <outlet property="sPATIAlButton" destination="2sc-dN-3Cg" id="hpV-2i-f4n"/>
+                        <outlet property="surveyLabel" destination="PZE-fA-UYP" id="Qd5-Ab-RlZ"/>
+                        <outlet property="tAPButton" destination="LUe-VR-I7u" id="Qeg-kJ-eA7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294.5" y="167.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lnb-8B-Inf">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5NR-Gm-LzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dFu-fd-KFr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9cg-QR-dQU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1040" y="275"/>
+            <point key="canvasLocation" x="1106.5" y="167.5"/>
         </scene>
         <!--Chart List View Controller-->
         <scene sceneID="Vd7-yd-fYd">
@@ -130,16 +151,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="BRx-Lm-fZJ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Title" id="a0r-hD-j0i"/>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiscreteGraphChartCell" rowHeight="250" id="w41-m5-wlO" customClass="DiscreteGraphChartTableViewCell" customModule="ResearchKit1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="66" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w41-m5-wlO" id="xnc-72-K2r">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
@@ -172,7 +186,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LineGraphChartCell" rowHeight="250" id="gv8-as-Bpo" customClass="LineGraphChartTableViewCell" customModule="ResearchKit1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="316" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="336" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gv8-as-Bpo" id="hNv-CN-Xgw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
@@ -205,7 +219,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PieChartCell" rowHeight="400" id="Hrh-zr-l4L" customClass="PieChartTableViewCell" customModule="ResearchKit1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="566" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="586" width="375" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hrh-zr-l4L" id="2n6-bp-7uE">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
@@ -239,17 +253,35 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="hDY-tb-Vdd"/>
-                    </toolbarItems>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dCO-VQ-NHh"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="8Ta-5o-w8w"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuL-gb-Uco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="6i4-O2-fGv"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="322"/>
+            <point key="canvasLocation" x="1755" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="52r-R4-Nsi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SDZ-kq-K1n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v9q-j0-zju">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kYt-aX-faf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KEb-ax-5FD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="167"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CGg-2k-f3d"/>
+    </inferredMetricsTieBreakers>
 </document>

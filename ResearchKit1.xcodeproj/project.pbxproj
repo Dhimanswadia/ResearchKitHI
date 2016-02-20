@@ -110,24 +110,40 @@
 				D13F6BEA1C786027006D5E93 /* ResearchKit1.entitlements */,
 				D1396AF31C782FFE006B3DD2 /* AppDelegate.swift */,
 				D1396AF51C782FFE006B3DD2 /* ViewController.swift */,
-				D13F6BDC1C785CE6006D5E93 /* Balance.swift */,
-				D13F6BDD1C785CE6006D5E93 /* ConsentDocument.swift */,
-				D13F6BDE1C785CE6006D5E93 /* ConsentTask.swift */,
-				D13F6BDF1C785CE6006D5E93 /* Spatial.swift */,
-				D13F6BED1C7861BA006D5E93 /* HealthKitManager.swift */,
-				D13F6BEF1C7862D7006D5E93 /* WalkFile.swift */,
-				D13F6BE01C785CE6006D5E93 /* SurveyTask.swift */,
-				D13F6BF31C7864AA006D5E93 /* ResultParser.swift */,
-				D13F6BE11C785CE6006D5E93 /* Tap.swift */,
+				D1FA15101C7930CA0071AD83 /* Sensor Controls */,
+				D1FA150F1C7930AF0071AD83 /* Charts */,
 				D1396AF71C782FFE006B3DD2 /* Main.storyboard */,
-				D13F6BF71C786BCF006D5E93 /* Chart Data Source .swift */,
-				D13F6BF91C786C69006D5E93 /* ChartListViewController.swift */,
-				D13F6BFB1C786CCC006D5E93 /* ChartTableView.swift */,
 				D1396AFA1C782FFE006B3DD2 /* Assets.xcassets */,
 				D1396AFC1C782FFE006B3DD2 /* LaunchScreen.storyboard */,
 				D1396AFF1C782FFE006B3DD2 /* Info.plist */,
 			);
 			path = ResearchKit1;
+			sourceTree = "<group>";
+		};
+		D1FA150F1C7930AF0071AD83 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				D13F6BF71C786BCF006D5E93 /* Chart Data Source .swift */,
+				D13F6BF91C786C69006D5E93 /* ChartListViewController.swift */,
+				D13F6BFB1C786CCC006D5E93 /* ChartTableView.swift */,
+			);
+			name = Charts;
+			sourceTree = "<group>";
+		};
+		D1FA15101C7930CA0071AD83 /* Sensor Controls */ = {
+			isa = PBXGroup;
+			children = (
+				D13F6BDC1C785CE6006D5E93 /* Balance.swift */,
+				D13F6BDE1C785CE6006D5E93 /* ConsentTask.swift */,
+				D13F6BDD1C785CE6006D5E93 /* ConsentDocument.swift */,
+				D13F6BEF1C7862D7006D5E93 /* WalkFile.swift */,
+				D13F6BF31C7864AA006D5E93 /* ResultParser.swift */,
+				D13F6BE11C785CE6006D5E93 /* Tap.swift */,
+				D13F6BED1C7861BA006D5E93 /* HealthKitManager.swift */,
+				D13F6BE01C785CE6006D5E93 /* SurveyTask.swift */,
+				D13F6BDF1C785CE6006D5E93 /* Spatial.swift */,
+			);
+			name = "Sensor Controls";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

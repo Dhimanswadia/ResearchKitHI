@@ -11,6 +11,17 @@ import ResearchKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var surveyLabel: UIButton!
+    @IBOutlet weak var cONSENTLABEL: UIButton!
+    
+    @IBOutlet weak var BALnCeLabel: UIButton!
+    
+    @IBOutlet weak var RESULTbUTTON: UIButton!
+    @IBOutlet weak var hEARTRateButton: UIButton!
+    @IBOutlet weak var sPATIAlButton: UIButton!
+    @IBOutlet weak var tAPButton: UIButton!
+    var string: NSString!
+    
     
     @IBAction func consentTapped(sender : AnyObject) {
         let taskViewController = ORKTaskViewController(task: ConsentTask, taskRunUUID: nil)
@@ -72,7 +83,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
                 
                 for url in heartURLs {
                     do {
-                        let string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+                        string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
                         print(string)
                     } catch {}
                 }
@@ -81,7 +92,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
             let spatialTapped = ResultParser.spatialTappedresults(taskViewController.result)
             for url in spatialTapped {
                 do {
-                    let string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+                string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
                     print(string)
                 } catch {}
             }
@@ -91,7 +102,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
             let balanceTapped = ResultParser.Balanceresults(taskViewController.result)
             for url in balanceTapped {
                 do {
-                    let string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+                     string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
                     print(string)
                 } catch {}
             }
@@ -101,7 +112,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
      let tapTapped = ResultParser.tapTappedresults(taskViewController.result)
       for url in tapTapped {
      do {
-    let string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+    string = try NSString.init(contentsOfURL: url, encoding: NSUTF8StringEncoding)
     print(string)
     } catch {}
     }
@@ -109,19 +120,29 @@ extension ViewController : ORKTaskViewControllerDelegate {
     }
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        surveyLabel.layer.cornerRadius = 7
+        cONSENTLABEL.layer.cornerRadius = 7
+        BALnCeLabel.layer.cornerRadius = 7
+        tAPButton.layer.cornerRadius = 7
+        RESULTbUTTON.layer.cornerRadius = 7
+        sPATIAlButton.layer.cornerRadius = 7
+        hEARTRateButton.layer.cornerRadius = 7
+        
+    }
     
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        let cell = sender as! UITableViewCell
-//        let indexPath = ChartListViewController.indexPathForCell(cell)!
-//        
-//        let orkResults = ORKResult![indexPath.row]
-//        
-//        let movieDetailsViewController = segue.destinationViewController as! ChartListViewController
+   
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+   
+//        let rESEARCHDetailsViewController = segue.destinationViewController as! ChartListViewController
 //        movieDetailsViewController.movie = orkResults
-//        
-//    }
+//    
+//     }
+        let chartListViewController = segue.destinationViewController as! ChartListViewController
+        chartListViewController.results = string
+    }
 
 }
 

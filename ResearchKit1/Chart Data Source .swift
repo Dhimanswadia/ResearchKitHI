@@ -8,7 +8,16 @@
 
 import Foundation
 import ResearchKit
+
+
+let Wage1 = CGFloat(WageConversion)
+
+
 class PieChartDataSource: NSObject, ORKPieChartViewDataSource {
+   // let Wage1 = CGFloat(WageConversion)
+    
+ 
+
     
     let colors = [
         UIColor(red: 217/225, green: 217/255, blue: 217/225, alpha: 1),
@@ -41,18 +50,18 @@ class LineGraphDataSource: NSObject, ORKGraphChartViewDataSource {
         [
             ORKRangedPoint(value: 10),
             ORKRangedPoint(value: 20),
-            ORKRangedPoint(value: 25),
+            ORKRangedPoint(value: Wage1),
             ORKRangedPoint(),
-            ORKRangedPoint(value: 30),
+            ORKRangedPoint(value: Wage1),
             ORKRangedPoint(value: 40),
         ],
         [
-            ORKRangedPoint(value: 2),
-            ORKRangedPoint(value: 4),
-            ORKRangedPoint(value: 8),
-            ORKRangedPoint(value: 16),
-            ORKRangedPoint(value: 32),
-            ORKRangedPoint(value: 64),
+            ORKRangedPoint(value: Wage1),
+            ORKRangedPoint(value: Wage1),
+            ORKRangedPoint(value: Wage1),
+            ORKRangedPoint(value: 30),
+            ORKRangedPoint(value: 40),
+            ORKRangedPoint(value: 70),
         ]
     ]
     
@@ -86,7 +95,7 @@ class DiscreteGraphDataSource: NSObject, ORKGraphChartViewDataSource {
     var plotPoints =
     [
         [
-            ORKRangedPoint(minimumValue: 0, maximumValue: 2),
+            ORKRangedPoint(minimumValue: Wage1, maximumValue: Wage1),
             ORKRangedPoint(minimumValue: 1, maximumValue: 4),
             ORKRangedPoint(minimumValue: 2, maximumValue: 6),
             ORKRangedPoint(minimumValue: 3, maximumValue: 8),
