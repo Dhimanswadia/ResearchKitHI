@@ -26,6 +26,7 @@
 		D13F6BF81C786BCF006D5E93 /* Chart Data Source .swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F6BF71C786BCF006D5E93 /* Chart Data Source .swift */; };
 		D13F6BFA1C786C69006D5E93 /* ChartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F6BF91C786C69006D5E93 /* ChartListViewController.swift */; };
 		D13F6BFC1C786CCC006D5E93 /* ChartTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F6BFB1C786CCC006D5E93 /* ChartTableView.swift */; };
+		D1E8CBBE1C79B24B00C5D8BA /* RSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8CBBD1C79B24B00C5D8BA /* RSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D13F6BF71C786BCF006D5E93 /* Chart Data Source .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chart Data Source .swift"; sourceTree = "<group>"; };
 		D13F6BF91C786C69006D5E93 /* ChartListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartListViewController.swift; sourceTree = "<group>"; };
 		D13F6BFB1C786CCC006D5E93 /* ChartTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableView.swift; sourceTree = "<group>"; };
+		D1E8CBBD1C79B24B00C5D8BA /* RSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				D1FA15101C7930CA0071AD83 /* Sensor Controls */,
 				D1FA150F1C7930AF0071AD83 /* Charts */,
 				D1396AF71C782FFE006B3DD2 /* Main.storyboard */,
+				D1E8CBBD1C79B24B00C5D8BA /* RSViewController.swift */,
 				D1396AFA1C782FFE006B3DD2 /* Assets.xcassets */,
 				D1396AFC1C782FFE006B3DD2 /* LaunchScreen.storyboard */,
 				D1396AFF1C782FFE006B3DD2 /* Info.plist */,
@@ -280,6 +283,7 @@
 				D13F6BE51C785CE6006D5E93 /* Spatial.swift in Sources */,
 				D13F6BFC1C786CCC006D5E93 /* ChartTableView.swift in Sources */,
 				D13F6BFA1C786C69006D5E93 /* ChartListViewController.swift in Sources */,
+				D1E8CBBE1C79B24B00C5D8BA /* RSViewController.swift in Sources */,
 				D13F6BF41C7864AA006D5E93 /* ResultParser.swift in Sources */,
 				D13F6BF01C7862D7006D5E93 /* WalkFile.swift in Sources */,
 				D13F6BE41C785CE6006D5E93 /* ConsentTask.swift in Sources */,
